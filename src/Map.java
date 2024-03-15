@@ -38,7 +38,7 @@ public class Map {
     }
 
     public int checkAdjacentTiles (int y, int x){
-        int choice = 0, wallCount = 0;
+        int wallCount = 0;
 
         try {
             if (grid[y][x - 1] == 1) {
@@ -67,11 +67,7 @@ public class Map {
                 }
             }catch (ArrayIndexOutOfBoundsException e){}
         }
-
-        if (wallCount > p){
-            choice++;
-        }
-        return choice;
+        return (wallCount > p) ? 1 : 0;
     }
 
     public void draw (Graphics g2){
